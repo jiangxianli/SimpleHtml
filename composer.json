@@ -1,0 +1,17 @@
+{
+  "name": "jiangxianli/simple-html",
+  "description": "一款类似于Jquery语法的HTML DOM解析扩展包",
+  "homepage": "https://github.com/jiangxianli/SimpleHtml",
+  "authors": [
+    {
+      "name": "jiangxianli",
+      "email": "997204035@qq.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "SimpleHtml\\": "src/SimpleHtml/"
+    }
+  }
+}
