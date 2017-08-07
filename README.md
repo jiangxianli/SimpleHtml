@@ -6,17 +6,32 @@
 ```
 ## 使用
 ```php
-//1.抓取网站源码
-$url = 'https://baidu.com';
-$html = file_get_content($url);
-//2.初始化解析器
-$html_node = SimpleHtml\SimpleHtml::str_get_html($html);
-//使用选择器
-$title = $html_node->find('title',0)->innertext;
-print_r($title);
+//字符串加载
+$html = \SimpleHtml\SimpleHtml::str_get_html(''<html><body>从字符串中加载html文档演示</body></html>'');
+//URL加载
+$html = \SimpleHtml\SimpleHtml::str_get_html('https://baidu.com');
+//文件加载
+$html = \SimpleHtml\SimpleHtml::str_get_html('/tmp/baidu.html');
+
+//查找html文档中的超链接元素
+$a = $html->find('a');
+
+//查找文档中第(N)个超链接，如果没有找到则返回空数组.
+$a = $html->find('a', 0);
+
+// 查找id为main的div元素
+$main = $html->find('div[id=main]',0);
+
+// 查找所有包含有id属性的div元素
+$divs = $html->find('div[id]');
+
+// 查找所有包含有id属性的元素
+$divs = $html->find('[id]');
+
 //清除使用
-$html_node->clear();
+$html->clear();
 ```
 
-## 更多语法
-请查看[simplehtmldom](http://simplehtmldom.sourceforge.net/)
+## 更多使用语法
+- [simPHP Simple HTML DOM Parser Wiki](http://simplehtmldom.sourceforge.net/manual.htm)
+- [PHP Simple HTML DOM解析器使用入门](http://www.cnphp.info/php-simple-html-dom-parser-intro.html)
