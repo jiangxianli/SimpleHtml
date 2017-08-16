@@ -7,11 +7,11 @@
 ## 使用
 ```php
 //字符串加载
-$html = \SimpleHtml\SimpleHtml::str_get_html(''<html><body>从字符串中加载html文档演示</body></html>'');
+$html = \SimpleHtml\SimpleHtml::str_get_html('<html><body>从字符串中加载html文档演示</body></html>');
 //URL加载
-$html = \SimpleHtml\SimpleHtml::str_get_html('https://baidu.com');
+$html = \SimpleHtml\SimpleHtml::file_get_html('https://baidu.com');
 //文件加载
-$html = \SimpleHtml\SimpleHtml::str_get_html('/tmp/baidu.html');
+$html = \SimpleHtml\SimpleHtml::file_get_html('/tmp/baidu.html');
 
 //查找html文档中的超链接元素
 $a = $html->find('a');
